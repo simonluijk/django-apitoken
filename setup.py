@@ -40,7 +40,7 @@ def get_package_data(package):
     return {package: filepaths}
 
 
-version = get_version('token')
+version = get_version('apitoken')
 
 
 if sys.argv[-1] == 'publish':
@@ -52,17 +52,16 @@ if sys.argv[-1] == 'publish':
 
 
 setup(
-    name='django-token',
+    name='django-apitoken',
     version=version,
-    url='http://github.com/simonluijk/django-token',
+    url='http://github.com/simonluijk/django-apitoken',
     license='BSD',
     description='Django app that helps manage geo-coding of model objects.',
     author='Simon Luijk',
     author_email='simon@simonluijk.com',  # SEE NOTE BELOW (*)
-    packages=get_packages('token'),
-    package_data=get_package_data('token'),
-    test_suite='token.runtests.runtests.main',
-    install_requires=['geopy', ],
+    packages=get_packages('apitoken'),
+    package_data=get_package_data('apitoken'),
+    test_suite='apitoken.runtests.runtests.main',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',

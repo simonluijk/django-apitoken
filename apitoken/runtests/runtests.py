@@ -5,7 +5,7 @@ import sys
 
 # fix sys path so we don't need to setup PYTHONPATH
 sys.path.append(os.path.join(os.path.dirname(__file__), "../.."))
-os.environ['DJANGO_SETTINGS_MODULE'] = 'token.runtests.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'apitoken.runtests.settings'
 
 
 import django
@@ -20,7 +20,7 @@ def main():
         pass
     TestRunner = get_runner(settings)
     test_runner = TestRunner()
-    failures = test_runner.run_tests(['token.tests'])
+    failures = test_runner.run_tests(['apitoken.tests'])
     sys.exit(failures)
 
 

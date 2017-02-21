@@ -1,12 +1,12 @@
-# Django-token
+# Django-apitoken
 
-**Django app that helps manage geo-coding of model objects.**
+**Django app that helps manage tokens for a RESTfull API.**
 
 [![build-status-image]][travis]
 
 # Overview
 
-Django-token is a django app that helps manage API tokens..
+Django-apitoken is a django app that helps manage API apitokens..
 
 # Requirements
 
@@ -17,18 +17,18 @@ Django-token is a django app that helps manage API tokens..
 
 Install using `pip`...
 
-    pip install django-token
+    pip install django-apitoken
 
-Add `'token'` to your `INSTALLED_APPS` setting.
+Add `'apitoken'` to your `INSTALLED_APPS` setting.
 
     INSTALLED_APPS = (
         ...
-        'token',
+        'apitoken',
     )
 
 More docs to come...
 
 That's it, we're done!
 
-[build-status-image]: https://secure.travis-ci.org/simonluijk/django-token.png?branch=master
-[travis]: http://travis-ci.org/simonluijk/django-token?branch=master
+[build-status-image]: https://secure.travis-ci.org/simonluijk/django-apitoken.png?branch=master
+[travis]: http://travis-ci.org/simonluijk/django-apitoken?branch=master
