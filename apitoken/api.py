@@ -5,6 +5,7 @@ from hashlib import sha256
 from datetime import timedelta
 from django.utils.timezone import now
 from django.core.cache import cache
+from django.contrib.auth import get_user_model
 from .conf import TOKEN_TYPES
 
 
@@ -34,7 +35,7 @@ class Token(object):
     def save(self):
         self.expires = now() + timedelta(seconds=self.life)
         data = {
-            'user': self.user,
+            'user': self.user.pk,
             'typ': self.typ,
             'expires': self.expires,
         }
@@ -50,6 +51,7 @@ class TokenAPI(object):
 
         data = cache.get(_getkey(token))
         if data:
+            data['user'] = get_user_model().objects.get(pk=data['user'])
             token = Token(token=token, **data)
             if token.is_valid:
                 token.save()
