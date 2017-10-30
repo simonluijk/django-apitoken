@@ -42,8 +42,8 @@ class Token(object):
 
 
 class TokenAPI(object):
-
-    def get(self, token):
+    @classmethod
+    def get(cls, token):
         """
         Returns a valid token if it exists else False
         """
@@ -55,7 +55,8 @@ class TokenAPI(object):
                 token.save()
                 return token
 
-    def create(self, user, typ=None):
+    @classmethod
+    def create(cls, user, typ=None):
         """
         Creates a new token for the given user and type
         """
